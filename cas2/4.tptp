@@ -1,0 +1,33 @@
+fof(jednaki_skupovi, axiom, ![A, B]: (jednaki(A,B) <=> ![X]: (el(X, A) <=> el(X, B)))).
+
+fof(unija_skupova, axiom, ![A, B, C]: (unija(A, B, C) <=> 
+                          ![X]:(el(X, C) <=> el(X, A) | el(X, B)))).
+
+fof(presek_skupova, axiom, ![A, B, C]: (presek(A, B, C) <=> 
+                          ![X]:(el(X, C) <=> el(X, A) & el(X, B)))).
+
+fof(razlika, axiom, ![A, B, C]: (razlika(A, B, C) <=> 
+                          ![X]:(el(X, C) <=> el(X, A) & ~el(X, B)))).                                                    
+
+fof(podskupovi, axiom, ![A, B]: (podskup(A,B) <=> ![X]: (el(X, A) => el(X, B)))).
+
+fof(conj1, conjecture,
+    ![A, B, C, BuC, ArB, ArC, Levo, Desno]:(
+        unija(B, C, BuC) &
+        razlika(A, B, ArB) &
+        razlika(A, C, ArC) &
+        razlika(A, BuC, Levo) &
+        presek(ArB, ArC, Desno) =>
+        jednaki(Levo, Desno)
+    )).
+
+
+% fof(conj2, conjecture, 
+%    ![A, B, C, ArB, AuC, Levo, Desno]:
+%        (
+%            razlika(A, B, ArB) &
+%            unija(A, C, AuC) &
+%            presek(ArB, C, Levo) &
+%            razlika(AuC, B, Desno)  =>
+%            podskup(Desno, Levo)
+%        )).

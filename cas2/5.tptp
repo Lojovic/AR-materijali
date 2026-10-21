@@ -1,0 +1,8 @@
+fof(neutral, axiom, ![X]: (mult(e, X) = X)).
+fof(inverz, axiom, ![X]: (mult(inv(X), X) = e)).
+fof(asoc, axiom, ![X, Y, Z]: (mult(mult(X, Y), Z) = mult(X, mult(Y, Z)))).
+
+fof(h1, hypothesis, ![X]: (mult(X, X) = e)).
+
+fof(conj1, conjecture, ![X]: (X = inv(X))).
+% fof(conj2, conjecture, ![X, Y]: (mult(X, Y) = mult(Y, X))).

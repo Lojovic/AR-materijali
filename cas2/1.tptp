@@ -1,0 +1,9 @@
+fof(svi_ljudni_su_smrtni, axiom, ![X]: (covek(X) => smrtan(X))).
+fof(sokrat_je_covek, axiom, covek(sokrat)).
+
+%fof(postoje_besmrtni, axiom, ?[X]: (covek(X) & ~smrtan(X))).
+
+fof(sokrat_je_smrtan, conjecture, smrtan(sokrat)).
+% fof(svi_smrtni_su_ljudi, conjecture, ![X]: (smrtan(X) & covek(X) => covek(X))).
+% fof(sokrat_je_smrtan, negated_conjecture, smrtan(sokrat)).
+% fof(provera_konzistentnosti, conjecture, $false).

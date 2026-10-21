@@ -1,0 +1,13 @@
+fof(ax1, axiom, ![X, Y]: (admin(X) => ima_pristup(X, Y))).
+fof(ax2, axiom, ![X, Y]: (ima_pristup(X, Y) <=> moze_da_cita(X, Y))).
+fof(ax3, axiom, ![X, Y]: (gost(X) & poverljiv(Y) => ~ima_pristup(X, Y))).
+
+fof(h1, hypothesis, admin(ana)).
+fof(h2, hypothesis, gost(boris)).
+fof(h3, hypothesis, poverljiv(ugovor)).
+% fof(h4, hypothesis, gost(ana)).
+
+fof(conj1, conjecture, moze_da_cita(ana, ugovor)).
+% fof(conj2, conjecture, ~moze_da_cita(boris, ugovor)).
+% fof(conj3, conjecture, ![X, Y]: (gost(X) & poverljiv(Y) => ~moze_da_cita(X, Y))).
+% fof(conj4, conjecture, $false).
