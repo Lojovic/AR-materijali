@@ -1,0 +1,23 @@
+% Planeta i pol su predstavljeni unarnim predikatima.
+% venus(X) znaci da je X sa Venere; u suprotnom je sa Marsa.
+% male(X) znaci da je X musko; u suprotnom je zensko.
+% Ogranicavamo se na dve osobe: Ork i Bog.
+fof(domen,axiom, ![X]: (X=ork | X=bog)).
+fof(razliciti,axiom, ork != bog).
+
+% Venerijanke i Marsovci govore istinu.
+fof(istinitost,axiom, ![X]:
+ (truth(X) <=> ((venus(X) & ~male(X)) | (~venus(X) & male(X))))).
+
+% Ork: Bog je sa Venere. Ork: Bog je muskog pola.
+fof(ork1,axiom, (truth(ork) <=> venus(bog))).
+fof(ork2,axiom, (truth(ork) <=> male(bog))).
+
+% Bog: Ork je sa Marsa. Bog: Ork je zenskog pola.
+fof(bog1,axiom, (truth(bog) <=> ~venus(ork))).
+fof(bog2,axiom, (truth(bog) <=> ~male(ork))).
+
+% Resenje: Ork je Venerijanac (laze);
+%          Bog je Marsovka (laze).
+fof(cilj,conjecture,
+ (venus(ork) & male(ork) & ~venus(bog) & ~male(bog))).

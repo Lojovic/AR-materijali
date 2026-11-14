@@ -1,0 +1,8 @@
+fof(refl, axiom, ![X]: (r(X, X))).
+fof(antisim, axiom, ![X, Y]: (r(X, Y) & r(Y, X) => X = Y)).
+fof(trans, axiom, ![X, Y, Z]: (r(X, Y) & r(Y, Z) => r(X, Z))).
+
+% fof(conj1, conjecture, ![X, Y, Z]: (r(X, Y) & r(Y, Z) & r(Z, X) => X = Y & Y = Z)).
+fof(uporedivost, axiom, ![X, Y]: (r(X, Y) | r(Y, X))).
+
+fof(conj2, conjecture, ![X, Y, Z]: (r(X, Y) & r(X, Z) | r(Y, X) & r(Y, Z) | r(Z, X) & r(Z, Y))).
